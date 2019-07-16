@@ -12,6 +12,14 @@ public class Task5 {
         print(array);
         sort(array);
         print(array);
+        System.out.println("Enter a value to search: ");
+        int value = sc.nextInt();
+        int result = search(array, value);
+        if (result != -1) {
+            System.out.println("Yes, element with index " + result);
+        } else {
+            System.out.println("No, try again... ");
+        }
     }
     private static void fill(int[] array) {
         int max = 100;
@@ -36,8 +44,22 @@ public class Task5 {
             }
         }
     }
-    private static int search(int[] array) {
-        int index = 0;
+    private static int search(int[] array, int value) {
+        int index = -1;
+        int indexLeft = 0;
+        int indexRight = array.length - 1;
+        int indexMiddle = (indexLeft + indexRight) / 2;
+        while (indexLeft <= indexRight) {
+            if (array[indexMiddle] > value) {
+                indexRight = indexMiddle - 1;
+            } else if (array[indexMiddle] < value) {
+                indexLeft = indexMiddle + 1;
+            } else {
+                index = indexMiddle;
+                return index;
+            }
+            indexMiddle = (indexLeft + indexRight) / 2;
+        }
         return index;
     }
 }

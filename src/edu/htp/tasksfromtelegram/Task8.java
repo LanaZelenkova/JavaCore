@@ -2,18 +2,20 @@ package edu.htp.tasksfromtelegram;
 
 import java.util.Scanner;
 
-public class Task4 {
+public class Task8 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter size of array: ");
+        System.out.println("Enter a size of array: ");
         int n = sc.nextInt();
         int[] array = new int[n];
+        int[] arrayCopy = new int[n];
         fill(array);
         print(array);
-        System.out.println("AVG is " + average(array));
+        copy(array, arrayCopy);
+        print(arrayCopy);
     }
     private static void fill(int[] array) {
-        int max = 100;
+        int max = 10;
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * ++max);
         }
@@ -24,11 +26,9 @@ public class Task4 {
         }
         System.out.println();
     }
-    private static double average(int[] array) {
-        double avg = 0;
-        for (int i : array) {
-            avg += i;
+    private static void copy(int[] src, int[] dest) {
+        for (int i = 0; i < src.length; i++) {
+            dest[i] = src[i];
         }
-        return avg / array.length;
     }
 }
