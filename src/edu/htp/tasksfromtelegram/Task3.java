@@ -4,7 +4,6 @@ public class Task3 {
     public static void main(String[] args) {
         final int n = 40;
         draw(n, " *  ", "  * ");
-
     }
     private static void draw(int n, String sFirst, String sLast) {
         for (int i = 0; i < n; i++) {

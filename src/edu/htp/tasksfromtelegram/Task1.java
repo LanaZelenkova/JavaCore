@@ -18,8 +18,9 @@ public class Task1 {
     }
 
     private static void sortArray(String... array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            for (int j = i + 1; j < array.length; j++) {
+        int n = array.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
                 if (array[j].compareToIgnoreCase(array[i]) < 0) {
                     String tempString = array[i];
                     array[i] = array[j];
@@ -29,8 +30,9 @@ public class Task1 {
         }
     }
     private static void sortArray(Integer... array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            for (int j = i + 1; j < array.length; j++) {
+        int n = array.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
                 if (array[j] < array[i]) {
                     Integer tempInt = array[i];
                     array[i] = array[j];
