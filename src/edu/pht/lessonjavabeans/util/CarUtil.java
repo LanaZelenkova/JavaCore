@@ -1,15 +1,15 @@
 package edu.pht.lessonjavabeans.util;
 
-import edu.pht.lessonjavabeans.beans.*;
+import edu.pht.lessonjavabeans.domain.*;
 
-import static edu.pht.lessonjavabeans.util.Constants.NEW_LINE;
-import static edu.pht.lessonjavabeans.util.Constants.SPACE;
+import static edu.pht.lessonjavabeans.util.Constants.*;
 
 public class CarUtil {
     public static double carPrice(Car car) {
+        final int n = car.getWheels().length;
         return car.getEngine().getPrice() +
                 car.getDoorsCount() * car.getDoor().getPrice() +
-                car.getWheel().getPrice() * 4 +
+                car.getWheels()[n - 1].getPrice() * n +
                 car.getBumper().getPrice() +
                 car.getWindshield().getPrice();
     }
@@ -68,8 +68,8 @@ public class CarUtil {
             case "color":
                 for (int i = 0; i < cars.length; i++) {
                     index = i;
-                    for (int j = i; j < cars.length; j++) {
-                        if (cars[index].getColor().compareTo(cars[j].getColor()) > 0) {
+                    for (int j = 0; j < cars.length; j++) {
+                        if (cars[index].getColor().compareTo(cars[j].getColor()) < 0) {
                             index = j;
                         }
                     }
@@ -99,8 +99,8 @@ public class CarUtil {
         StringBuilder sb = new StringBuilder();
         for (Car car : cars) {
             sb.append(NEW_LINE);
-            sb.append("Id: " + car.getId());
-            sb.append(", Producer: " + car.getProducer());
+            sb.append(ID + car.getId());
+            sb.append(PRODUCER + car.getProducer());
             sb.append(", Speed: " + car.getSpeed());
             sb.append(", Color: " + car.getColor());
             sb.append(", General Price: " + carPrice(car));

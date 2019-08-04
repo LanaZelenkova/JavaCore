@@ -1,9 +1,11 @@
 package edu.pht.lessonjavabeans.run;
 
-import edu.pht.lessonjavabeans.beans.*;
+import static edu.pht.lessonjavabeans.util.Constants.GENERAL_PRICE;
+import edu.pht.lessonjavabeans.domain.*;
 import edu.pht.lessonjavabeans.util.CarUtil;
 
 public class Task1 {
+
     public static void main(String[] args) {
         Bumper bumper = new Bumper(14L, "1L-50", 50);
         Door door = new Door(25L, "2L-35", 35);
@@ -13,11 +15,11 @@ public class Task1 {
         Car car = new Car(4L, "Toyota", 2019, 300, engine, door, bumper, wheel, windshield, 100);
         System.out.println(CarUtil.printProducerAndModel(car));
         System.out.println();
-        System.out.println("General price = " + CarUtil.carPrice(car));
+        System.out.println(GENERAL_PRICE + CarUtil.carPrice(car));
         System.out.println();
         Windshield windshield4 = new Windshield(55L, "5L-920", 920);
         //We change windshield
         car.changeDetail(windshield4);
-        System.out.println("General price = " + CarUtil.carPrice(car));
+        System.out.println(GENERAL_PRICE + CarUtil.carPrice(car));
     }
 }

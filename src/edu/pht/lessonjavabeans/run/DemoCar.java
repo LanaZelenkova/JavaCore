@@ -1,10 +1,9 @@
 package edu.pht.lessonjavabeans.run;
 
-import edu.pht.lessonjavabeans.beans.*;
+import edu.pht.lessonjavabeans.domain.*;
 import edu.pht.lessonjavabeans.util.CarUtil;
-import edu.pht.lessonjavabeans.beans.Color;
+import edu.pht.lessonjavabeans.domain.Color;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class DemoCar {
@@ -57,9 +56,9 @@ public class DemoCar {
             Scanner sc = new Scanner(System.in);
             String param = sc.nextLine();
             CarUtil.carSort(param, cars);
-            System.out.println("\nAfter sorting: \n");
+            System.out.println("\nAfter sorting: ");
             System.out.println(CarUtil.carPrint(cars));
-            System.out.println("Try again? y/n");
+            System.out.println("\nTry again? y/n");
             answer = sc.nextLine().trim().replaceAll("\\s", "").toLowerCase();
         } while(!answer.equals("n"));
     }
