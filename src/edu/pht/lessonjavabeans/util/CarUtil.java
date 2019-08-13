@@ -1,8 +1,16 @@
 package edu.pht.lessonjavabeans.util;
 
-import edu.pht.lessonjavabeans.domain.*;
+import edu.pht.lessonjavabeans.domain.Bumper;
+import edu.pht.lessonjavabeans.domain.Car;
+import edu.pht.lessonjavabeans.domain.Door;
+import edu.pht.lessonjavabeans.domain.Engine;
+import edu.pht.lessonjavabeans.domain.Wheel;
+import edu.pht.lessonjavabeans.domain.Windshield;
 
-import static edu.pht.lessonjavabeans.util.Constants.*;
+import static edu.pht.lessonjavabeans.util.Constants.NEW_LINE;
+import static edu.pht.lessonjavabeans.util.Constants.ID;
+import static edu.pht.lessonjavabeans.util.Constants.PRODUCER;
+
 
 public class CarUtil {
     public static double carPrice(Car car) {

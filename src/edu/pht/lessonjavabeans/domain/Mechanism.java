@@ -3,7 +3,10 @@ package edu.pht.lessonjavabeans.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
-import static edu.pht.lessonjavabeans.util.Constants.*;
+import static edu.pht.lessonjavabeans.util.Constants.COLON;
+import static edu.pht.lessonjavabeans.util.Constants.ID;
+import static edu.pht.lessonjavabeans.util.Constants.NEW_LINE;
+import static edu.pht.lessonjavabeans.util.Constants.PRODUCER;
 
 public abstract class Mechanism implements Serializable, Cleanable {
 

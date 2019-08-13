@@ -1,6 +1,11 @@
 package edu.pht.lessonjavabeans.run;
 
-import edu.pht.lessonjavabeans.domain.*;
+import edu.pht.lessonjavabeans.domain.Bumper;
+import edu.pht.lessonjavabeans.domain.Car;
+import edu.pht.lessonjavabeans.domain.Door;
+import edu.pht.lessonjavabeans.domain.Engine;
+import edu.pht.lessonjavabeans.domain.Wheel;
+import edu.pht.lessonjavabeans.domain.Windshield;
 import edu.pht.lessonjavabeans.util.CarUtil;
 import edu.pht.lessonjavabeans.domain.Color;
 
