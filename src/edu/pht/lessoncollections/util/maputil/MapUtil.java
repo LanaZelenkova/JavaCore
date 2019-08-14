@@ -1,13 +1,13 @@
-package edu.pht.lessoncollections.util.fileutil;
+package edu.pht.lessoncollections.util.maputil;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+import java.util.Iterator;
 import java.util.Map;
 
 import static edu.pht.lessoncollections.run.Task5.COLON;
 
-public class FileUtil {
+public class MapUtil {
+
     public static void printMap(Map<String, Integer> map) {
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             System.out.println(entry.getKey() + COLON + entry.getValue());
@@ -19,14 +19,11 @@ public class FileUtil {
     }
 
     public static void removeFromMapIfNullValue(Map<String, Integer> map) {
-        List<String> result = new ArrayList<>();
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            if (entry.getValue() == 0) {
-                result.add(entry.getKey());
+        Iterator<Map.Entry<String, Integer>> iterator = map.entrySet().iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next().getValue() == 0) {
+                iterator.remove();
             }
-        }
-        for (String key : result) {
-            map.remove(key);
         }
     }
 
@@ -34,8 +31,9 @@ public class FileUtil {
         String result = "";
         int max = 0;
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            if (entry.getValue() > max) {
-                max = entry.getValue();
+            Integer current = entry.getValue();
+            if (current > max) {
+                max = current;
                 result = entry.getKey();
             }
         }

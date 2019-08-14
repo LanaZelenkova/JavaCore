@@ -1,12 +1,12 @@
 package edu.pht.lessoncollections.util.studentutil;
 
-import edu.pht.lessoncollections.domain.Book;
 import edu.pht.lessoncollections.domain.Student;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 public class StudentUtil {
 
@@ -38,11 +38,23 @@ public class StudentUtil {
     private static int randomInt() {
         return RandomUtils.nextInt(yearMin, yearMax);
     }
+
     public static void print(Collection<Student> students) {
         for (Student student : students) {
             System.out.println(student);
         }
     }
+
+    public static void outputIfCondition(Collection<Student> students) {
+        Iterator<Student> it = students.iterator();
+        while (it.hasNext()) {
+            Student student = it.next();
+            if (student.getId() % 2 == 0) {
+                System.out.println(student);
+            }
+        }
+    }
+
     public static void sort(Student[] students) {
         int n = students.length;
         for (int i = 0; i < n - 1; i++) {

@@ -41,9 +41,5 @@ public class Task3 {
         Book[] books = new Book[listOfBooks.size()];
         BookUtil.sort(listOfBooks.toArray(books));
         BookUtil.print(Arrays.asList(books));
-        System.out.println("_________________________________________________________________________________________");
-        Collections.shuffle(listOfBooks);
-        Collections.sort(listOfBooks);
-        BookUtil.print(listOfBooks);
     }
 }

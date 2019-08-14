@@ -1,12 +1,9 @@
 package edu.pht.lessoncollections.run;
 
-import edu.pht.lessoncollections.util.fileutil.FileReader;
-import edu.pht.lessoncollections.util.fileutil.FileUtil;
+import edu.pht.lessoncollections.util.maputil.FileReader;
+import edu.pht.lessoncollections.util.maputil.MapUtil;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Task5 {
@@ -23,15 +20,15 @@ public class Task5 {
             data = fileReader.getProperty(key).split(DELIMITER);
             map.put( data[0], Integer.parseInt(data[1]));
         }
-        FileUtil.printMap(map);
+        MapUtil.printMap(map);
         System.out.println("_________________________________________________________________________________________");
-        FileUtil.removeIf(map);
+        MapUtil.removeIf(map);
         //removeFromMapIfNullValue(map);
-        FileUtil.printMap(map);
+        MapUtil.printMap(map);
         System.out.println("_________________________________________________________________________________________");
-        String keyForMaxValue = FileUtil.getCategoryWithMaxValue(map);
+        String keyForMaxValue = MapUtil.getCategoryWithMaxValue(map);
         System.out.println("Max value " + map.get(keyForMaxValue) + " in category \"" + keyForMaxValue + "\"");
         System.out.println("_________________________________________________________________________________________");
-        FileUtil.sortMapValues(map);
+        MapUtil.sortMapValues(map);
     }
 }

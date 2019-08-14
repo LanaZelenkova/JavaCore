@@ -6,7 +6,6 @@ import edu.pht.lessoncollections.util.bookutil.Director;
 import edu.pht.lessoncollections.util.bookutil.EqualBookBuilder;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,29 +19,8 @@ public class Task2 {
         for (int i = 0; i < COUNT; i++) {
             setOfBooks.add(director.buildBook());
         }
-        outputAll(setOfBooks);
+        BookUtil.print(setOfBooks);
         System.out.println("_________________________________________________________________________________________");
-        output(setOfBooks);
-    }
-
-    private static void outputAll(Collection<Book> books) {
-        for (Book book : books) {
-            System.out.println(book);
-        }
-    }
-
-    private static void output(Collection<Book> books) {
-        for (Book book : books) {
-            if (isCondition(book)) {
-                System.out.println(book);
-            }
-        }
-    }
-    private static boolean isCondition(Book book) {
-        return toLowerCase(book).startsWith("a") || toLowerCase(book).startsWith("e") || toLowerCase(book).startsWith("i") ||
-                toLowerCase(book).startsWith("o") || toLowerCase(book).startsWith("u");
-    }
-    private static String toLowerCase(Book book) {
-        return book.getTitle().trim().toLowerCase();
+        BookUtil.outputIfStartsWith(setOfBooks);
     }
 }

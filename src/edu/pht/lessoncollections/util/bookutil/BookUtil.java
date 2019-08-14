@@ -25,6 +25,7 @@ public class BookUtil {
         }
         return result;
     }
+
     private static String randomString() {
         return StringUtils.capitalize(RandomStringUtils.randomAlphabetic(min, max).toLowerCase());
     }
@@ -38,6 +39,36 @@ public class BookUtil {
             System.out.println(book);
         }
     }
+
+    public static void outputIf(Collection<Book> books) {
+        for (Book book : books) {
+            if (isCondition(book)) {
+                System.out.println(book);
+            }
+        }
+    }
+
+    private static boolean isCondition(Book book) {
+        return toLowerCase(book).startsWith("a") || toLowerCase(book).startsWith("e") || toLowerCase(book).startsWith("i") ||
+                toLowerCase(book).startsWith("o") || toLowerCase(book).startsWith("u");
+    }
+
+    private static String toLowerCase(Book book) {
+        return book.getTitle().trim().toLowerCase();
+    }
+
+    public static void outputIfStartsWith(Collection<Book> books) {
+        String[] arrayOfVowels = new String[] {"a", "e", "i", "o", "u"};
+        for (Book book : books) {
+            for (String vowel : arrayOfVowels) {
+                if (book.getTitle().trim().toLowerCase().startsWith(vowel)) {
+                    System.out.println(book);
+                    break;
+                }
+            }
+        }
+    }
+
     public static void sort(Book[] books) {
         int n = books.length;
         for (int i = 0; i < n - 1; i++) {

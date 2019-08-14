@@ -1,4 +1,4 @@
-package edu.pht.lessoncollections.util.fileutil;
+package edu.pht.lessoncollections.util.maputil;
 
 import java.util.ResourceBundle;
 
