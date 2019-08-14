@@ -40,27 +40,9 @@ public class BookUtil {
         }
     }
 
-    public static void outputIf(Collection<Book> books) {
+    public static void outputIfStartsWith(Collection<Book> books, String... data) {
         for (Book book : books) {
-            if (isCondition(book)) {
-                System.out.println(book);
-            }
-        }
-    }
-
-    private static boolean isCondition(Book book) {
-        return toLowerCase(book).startsWith("a") || toLowerCase(book).startsWith("e") || toLowerCase(book).startsWith("i") ||
-                toLowerCase(book).startsWith("o") || toLowerCase(book).startsWith("u");
-    }
-
-    private static String toLowerCase(Book book) {
-        return book.getTitle().trim().toLowerCase();
-    }
-
-    public static void outputIfStartsWith(Collection<Book> books) {
-        String[] arrayOfVowels = new String[] {"a", "e", "i", "o", "u"};
-        for (Book book : books) {
-            for (String vowel : arrayOfVowels) {
+            for (String vowel : data) {
                 if (book.getTitle().trim().toLowerCase().startsWith(vowel)) {
                     System.out.println(book);
                     break;

@@ -21,6 +21,7 @@ public class Task2 {
         }
         BookUtil.print(setOfBooks);
         System.out.println("_________________________________________________________________________________________");
-        BookUtil.outputIfStartsWith(setOfBooks);
+        String[] arrayOfVowels = new String[] {"a", "e", "i", "o", "u"};
+        BookUtil.outputIfStartsWith(setOfBooks, arrayOfVowels);
     }
 }
